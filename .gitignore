@@ -1,0 +1,28 @@
+# Ignore compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore Python virtual environment files
+venv/
+env/
+*.env
+env.bak/
+*.egg-info/
+dist/
+build/
+
+# Ignore .idea directory and other IDE-specific files
+.idea/
+*.iml
+*.ipynb_checkpoints/
+*.vscode/
+*.pydevproject
+*.pyc
+
+# Ignore user-specific configuration files
+*.bak
+*.swp
+*~
+.DS_Store
+Thumbs.db
