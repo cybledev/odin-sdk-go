@@ -12,3 +12,4 @@ All URIs are relative to **
 ## Documentation For Authorization
  Endpoints do not require authorization.
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/odin-cyble/odin-sdk-go.svg)](https://pkg.go.dev/github.com/odin-cyble/odin-sdk-go)
