@@ -8,14 +8,14 @@ import (
 func main() {
 	client := odin.NewAPIClient("https://api.getodin.com/v1", "<APIKey>")
 	resp, err := client.GetHostsSummary(odin.HostsSummaryRequest{
-		Field: "services.port",
+		Field: "services.name",
 		Limit: 10,
 	})
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	fmt.Println(resp.Success)
-	fmt.Println(len(resp.Data.Buckets))
-
+	for _, bucket := range resp.Data.Buckets {
+		fmt.Printf("Service: %s, Count: %d\n", bucket.Key, bucket.DocCount)
+	}
 }

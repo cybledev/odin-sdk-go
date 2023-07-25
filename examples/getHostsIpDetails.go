@@ -12,8 +12,8 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	fmt.Println(resp.Success)
+	fmt.Printf("Success: %t, IP: %s\n", resp.Success, resp.Data.IP)
 	for _, svc := range resp.Data.Services {
-		fmt.Println("Service Name:", svc.Name)
+		fmt.Printf("Service Name: %s, Service Port: %d\n", svc.Name, svc.Port)
 	}
 }
