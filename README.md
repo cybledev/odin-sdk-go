@@ -17,8 +17,7 @@ go get github.com/odin-cyble/odin-sdk-go
 Import the package into your Go code and create an instance of the `odin.APIClient` by providing the base API URL and your API key:
 ```golang
 import github.com/odin-cyble/odin-sdk-go
-```
-```golang
+
 client := odin.NewAPIClient("https://api.getodin.com/v1", "<APIKey>")
 ```
 
