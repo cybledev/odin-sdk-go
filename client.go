@@ -41,6 +41,9 @@ func (c *APIClient) GetHostsCount(query string) (*HostCountResponse, error) {
 	apiUrl := fmt.Sprintf("%s/hosts/count", c.BaseUrl)
 	var response HostCountResponse
 	resp, err := c.MakeRequest(apiUrl, "post", countReq, &response)
+	if err != nil {
+		return nil, err
+	}
 	if !response.Success {
 		err = &APIError{
 			StatusCode: resp.StatusCode,
@@ -58,6 +61,9 @@ func (c *APIClient) GetHostsIpDetails(ip string) (*HostsIpDetailsResponse, error
 	apiUrl := fmt.Sprintf("%s/hosts/%s/", c.BaseUrl, ip)
 	var response HostsIpDetailsResponse
 	resp, err := c.MakeRequest(apiUrl, "GET", ip, &response)
+	if err != nil {
+		return nil, err
+	}
 	if !response.Success {
 		err = &APIError{
 			StatusCode: resp.StatusCode,
@@ -76,6 +82,9 @@ func (c *APIClient) SearchHosts(query HostsSearchRequest) (*HostsSearchResponse,
 	apiUrl := fmt.Sprintf("%s/hosts/search", c.BaseUrl)
 	var response HostsSearchResponse
 	resp, err := c.MakeRequest(apiUrl, "POST", query, &response)
+	if err != nil {
+		return nil, err
+	}
 	if !response.Success {
 		err = &APIError{
 			StatusCode: resp.StatusCode,
@@ -93,6 +102,9 @@ func (c *APIClient) GetHostsSummary(query HostsSummaryRequest) (*HostsSummaryRes
 	apiUrl := fmt.Sprintf("%s/hosts/summary", c.BaseUrl)
 	var response HostsSummaryResponse
 	resp, err := c.MakeRequest(apiUrl, "POST", query, &response)
+	if err != nil {
+		return nil, err
+	}
 	if !response.Success {
 		err = &APIError{
 			StatusCode: resp.StatusCode,
@@ -113,6 +125,9 @@ func (c *APIClient) GetCertificateCount(query string) (*CertificateCountResponse
 	apiUrl := fmt.Sprintf("%s/certificates/count", c.BaseUrl)
 	var response CertificateCountResponse
 	resp, err := c.MakeRequest(apiUrl, "post", countReq, &response)
+	if err != nil {
+		return nil, err
+	}
 	if !response.Success {
 		err = &APIError{
 			StatusCode: resp.StatusCode,
@@ -130,6 +145,9 @@ func (c *APIClient) GetCertificateHashDetails(hash string) (*CertificateHashResp
 	apiUrl := fmt.Sprintf("%s/certificates/%s/", c.BaseUrl, hash)
 	var response CertificateHashResponse
 	resp, err := c.MakeRequest(apiUrl, "GET", hash, &response)
+	if err != nil {
+		return nil, err
+	}
 	if !response.Success {
 		err = &APIError{
 			StatusCode: resp.StatusCode,
@@ -148,6 +166,9 @@ func (c *APIClient) SearchCertificates(query CertificateSearchRequest) (*Certifi
 	apiUrl := fmt.Sprintf("%s/certificates/search", c.BaseUrl)
 	var response CertificateSearchResponse
 	resp, err := c.MakeRequest(apiUrl, "POST", query, &response)
+	if err != nil {
+		return nil, err
+	}
 	if !response.Success {
 		err = &APIError{
 			StatusCode: resp.StatusCode,
@@ -165,6 +186,9 @@ func (c *APIClient) GetCertificatesSummary(query CertificateSummaryRequest) (*Ce
 	apiUrl := fmt.Sprintf("%s/certificates/summary", c.BaseUrl)
 	var response CertificateSummaryResponse
 	resp, err := c.MakeRequest(apiUrl, "POST", query, &response)
+	if err != nil {
+		return nil, err
+	}
 	if !response.Success {
 		err = &APIError{
 			StatusCode: resp.StatusCode,
