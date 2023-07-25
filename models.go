@@ -204,7 +204,7 @@ type HostsSummaryResponse struct {
 		SumOtherDocCount        int `json:"sum_other_doc_count"`
 		Buckets                 []struct {
 			DocCount int `json:"doc_count"`
-			Key      int `json:"key"`
+			Key      any `json:"key"`
 		} `json:"buckets"`
 	} `json:"data,omitempty"`
 }
