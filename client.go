@@ -74,6 +74,26 @@ func (c *APIClient) GetHostsIpDetails(ip string) (*HostsIpDetailsResponse, error
 	return &response, err
 }
 
+// GetIpCveDetails Fetch the latest cve details
+// Returns the complete cve details
+// @return IpCveResponse
+func (c *APIClient) GetIpCveDetails(ip string) (*IpCveResponse, error) {
+	apiUrl := fmt.Sprintf("%s/hosts/cve/%s/", c.BaseUrl, ip)
+	var response IpCveResponse
+	resp, err := c.MakeRequest(apiUrl, "GET", ip, &response)
+	if err != nil {
+		return nil, err
+	}
+	if !response.Success {
+		err = &APIError{
+			StatusCode: resp.StatusCode,
+			Message:    response.Message,
+		}
+		return nil, err
+	}
+	return &response, err
+}
+
 // SearchHosts Fetch the record based on query
 // Returns the record based on query and blank query will return all records. It uses es searchafter for the pagination.
 // @return HostsSearchResponse

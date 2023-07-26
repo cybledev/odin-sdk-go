@@ -17,7 +17,7 @@ type HostsIpDetailsResponse struct {
 	Message string `json:"message,omitempty"`
 	Data    struct {
 		ASN struct {
-			CountryCode  string `json:"country_code"`
+			CountryCode  any    `json:"country_code"`
 			Number       string `json:"number"`
 			Organization string `json:"organization"`
 		} `json:"asn"`
@@ -46,7 +46,7 @@ type HostsIpDetailsResponse struct {
 			PostalCode  string `json:"postal_code"`
 		} `json:"location"`
 		LocationUpdatedAt string `json:"location_updated_at"`
-		ScanID            int    `json:"scan_id"`
+		ScanID            int64  `json:"scan_id"`
 		Services          []struct {
 			Meta struct {
 				Category string `json:"category"`
@@ -54,30 +54,48 @@ type HostsIpDetailsResponse struct {
 				Name     string `json:"name"`
 				Tags     any    `json:"tags"`
 			} `json:"_meta"`
+			CVE []struct {
+				ID       string `json:"id"`
+				Severity string `json:"severity"`
+			} `json:"cve"`
 			ExtraInfo     string `json:"extra_info"`
 			LastUpdatedAt string `json:"last_updated_at"`
 			Modules       struct {
-				HTTP struct {
-					ContentLength int                 `json:"content_length"`
-					Headers       map[string][]string `json:"headers"`
-					Protocol      string              `json:"protocol"`
-					Redirects     []struct {
-						ContentLength int    `json:"content_length"`
-						Location      string `json:"location"`
-						StatusCode    int    `json:"status_code"`
-						StatusLine    string `json:"status_line"`
-					} `json:"redirects"`
-					StatusCode       int `json:"status_code"`
-					TransferEncoding any `json:"transfer_encoding"`
-				} `json:"http"`
+				Oracle struct {
+					AcceptVersion        int64           `json:"accept_version"`
+					ConnectFlags0        map[string]bool `json:"connect_flags0"`
+					ConnectFlags1        map[string]bool `json:"connect_flags1"`
+					DidResend            bool            `json:"did_resend"`
+					GlobalServiceOptions struct {
+						FullDuplex     bool `json:"FULL_DUPLEX"`
+						HeaderChecksum bool `json:"HEADER_CHECKSUM"`
+						Unknown0001    bool `json:"UNKNOWN_0001"`
+						Unknown0040    bool `json:"UNKNOWN_0040"`
+					} `json:"global_service_options"`
+					NSNServiceVersions struct {
+						Authentication string `json:"authentication"`
+						DataIntegrity  string `json:"data_integrity"`
+						Encryption     string `json:"encryption"`
+						Supervisor     string `json:"supervisor"`
+					} `json:"nsn_service_versions"`
+				} `json:"oracle"`
 			} `json:"modules"`
-			Name      string   `json:"name"`
-			Port      int      `json:"port"`
-			Product   string   `json:"product"`
-			Protocol  string   `json:"protocol"`
-			Softwares []string `json:"softwares"`
-			Tunnel    string   `json:"tunnel"`
-			Version   string   `json:"version"`
+			Name      string `json:"name"`
+			Port      int64  `json:"port"`
+			Product   string `json:"product"`
+			Protocol  string `json:"protocol"`
+			Softwares []struct {
+				Edition  string `json:"edition"`
+				Language string `json:"language"`
+				Part     string `json:"part"`
+				Product  string `json:"product"`
+				Update   string `json:"update"`
+				URI      string `json:"uri"`
+				Vendor   string `json:"vendor"`
+				Version  string `json:"version"`
+			} `json:"softwares"`
+			Tunnel  string `json:"tunnel"`
+			Version string `json:"version"`
 		} `json:"services"`
 		ServicesHash string `json:"services_hash"`
 		Tags         []struct {
@@ -90,13 +108,30 @@ type HostsIpDetailsResponse struct {
 			Encoding struct {
 				Raw string `json:"raw"`
 			} `json:"_encoding"`
-			Desc         string `json:"descr"`
+			Description  string `json:"descr"`
 			Network      string `json:"network"`
 			Organization string `json:"organization"`
 			Raw          any    `json:"raw"`
 		} `json:"whois"`
 		WhoisUpdatedAt string `json:"whois_updated_at"`
 	} `json:"data"`
+}
+
+type IpCveDetails struct {
+	ID           string   `json:"id"`
+	References   []string `json:"references"`
+	Score        float64  `json:"score"`
+	Services     []string `json:"services"`
+	Severity     string   `json:"severity"`
+	Summary      string   `json:"summary"`
+	VectorString string   `json:"vector_string"`
+	Weakness     string   `json:"weakness"`
+}
+
+type IpCveResponse struct {
+	Success bool                    `json:"success"`
+	Data    map[string]IpCveDetails `json:"data"`
+	Message string                  `json:"message,omitempty"`
 }
 
 type HostsSearchRequest struct {
@@ -152,9 +187,16 @@ type HostsSearchData struct {
 			Name     string `json:"name"`
 			Tags     []any  `json:"tags"`
 		} `json:"_meta"`
+		Cve struct {
+			ID       string `json:"id"`
+			Severity string `json:"severity"`
+		} `json:"cve"`
 		ExtraInfo     any    `json:"extra_info"`
 		LastUpdatedAt string `json:"last_updated_at"`
 		Modules       struct {
+			Smtp struct {
+				Banner string `json:"banner"`
+			} `json:"smtp"`
 			HTTP struct {
 				ContentLength    int              `json:"content_length"`
 				Headers          map[string][]any `json:"headers"`
