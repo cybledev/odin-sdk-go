@@ -1,6 +1,6 @@
-# Odin Sdk For Go
+# Odin SDK For Go
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/odin-cyble/odin-sdk-go.svg)](https://pkg.go.dev/github.com/odin-cyble/odin-sdk-go)
+[![Go Reference](https://pkg.go.dev/badge/github.com/cybledev/odin-sdk-go.svg)](https://pkg.go.dev/github.com/cybledev/odin-sdk-go)
 
 The Odin SDK for Go provides a simple way to interact with the Odin API and access various services related to cybersecurity, certificates, and more.
 
@@ -9,14 +9,14 @@ The Odin SDK for Go provides a simple way to interact with the Odin API and acce
 To use the Odin SDK in your Go project, you need to install it using the `go get` command:
 
 ```bash
-go get github.com/odin-cyble/odin-sdk-go
+go get github.com/cybledev/odin-sdk-go
 ```
 
 ## Usage
 
 Import the package into your Go code and create an instance of the `odin.APIClient` by providing the base API URL and your API key:
 ```golang
-import github.com/odin-cyble/odin-sdk-go
+import github.com/cybledev/odin-sdk-go
 
 client := odin.NewAPIClient("https://api.getodin.com/v1", "<APIKey>")
 ```
@@ -49,7 +49,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/odin-cyble/odin-sdk-go"
+	"github.com/cybledev/odin-sdk-go"
 )
 
 func main() {

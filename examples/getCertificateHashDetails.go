@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/odin-cyble/odin-sdk-go"
+	"github.com/cybledev/odin-sdk-go"
 )
 
 func main() {
