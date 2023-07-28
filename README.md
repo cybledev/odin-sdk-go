@@ -44,7 +44,6 @@ In the "examples" folder of this repository, you can find various usage examples
 Each example is a standalone Go program that showcases specific functionalities of the SDK.
 
 ```go
-
 package main
 
 import (
@@ -54,7 +53,7 @@ import (
 
 func main() {
 	client := odin.NewAPIClient("https://api.getodin.com/v1", "<APIKey>")
-	resp, err := client.GetCertificateCount("string")
+	resp, err := client.GetHostsCount("services.port:80")
 	if err != nil {
 		fmt.Println(err)
 		return
