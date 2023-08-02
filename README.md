@@ -23,16 +23,17 @@ client := odin.NewAPIClient("https://api.getodin.com/v1", "<APIKey>")
 
 ## APIs and Response Types
 
-| API                           | Request Type              | Response Type                  |
-|-------------------------------|---------------------------|--------------------------------|
-| GetCertificateCount           | string                    | CertificateCountResponse       |
-| GetCertificateHashDetails     | string                    | CertificateDetailsResponse     |
-| GetHostsIpDetails             | string                    | HostDetailsResponse            |
-| GetCertificatesSummary        | CertificateSummaryRequest | CertificateSummaryResponse     |
-| GetHostsCount                 | string                    | HostCountResponse              |
-| GetHostsSummary               | HostsSummaryRequest       | HostsSummaryResponse           |
-| SearchCertificates            | CertificateSearchRequest  | CertificateSearchResponse      |
-| SearchHosts                   | HostsSearchRequest        | HostsSearchResponse            |
+| API                       | Request Type              | Response Type              |
+|---------------------------|---------------------------|----------------------------|
+| GetCertificateCount       | string                    | CertificateCountResponse   |
+| GetCertificateHashDetails | string                    | CertificateDetailsResponse |
+| GetHostsIpDetails         | string                    | HostDetailsResponse        |
+| GetHostsIpCVEDetails      | string                    | IpCveResponse              |
+| GetCertificatesSummary    | CertificateSummaryRequest | CertificateSummaryResponse |
+| GetHostsCount             | string                    | HostCountResponse          |
+| GetHostsSummary           | HostsSummaryRequest       | HostsSummaryResponse       |
+| SearchCertificates        | CertificateSearchRequest  | CertificateSearchResponse  |
+| SearchHosts               | HostsSearchRequest        | HostsSearchResponse        |
 
 
 
