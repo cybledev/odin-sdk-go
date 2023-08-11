@@ -2,7 +2,7 @@
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/cybledev/odin-sdk-go.svg)](https://pkg.go.dev/github.com/cybledev/odin-sdk-go)
 
-Odin offers precise internet insights to infosec teams, enhancing security by proactively spotting threats in their attack surface. It scans the entire IPv4, identifying 100+ public services and creating a comprehensive inventory of hosts, domains, certificates, and more. With in-depth scanning of sensitive ports and detailed service analysis, Odin provides unparalleled understanding of an organization's online presence.
+ODIN's primary focus is to equip infosec teams with a precise depiction of the internet, enabling them to strengthen their security defences and proactively detect threats within their attack surface.
 
 The Odin SDK for Go provides a simple way to interact with the [Odin API](https://getodin.com/docs/api) and access various services related to cybersecurity, certificates, and more.
 
