@@ -42,7 +42,7 @@ client := odin.NewAPIClient("https://api.getodin.com/v1", "<APIKey>")
 
 ## Examples
 
-In the "examples" folder of this repository, you can find various usage examples demonstrating how to interact with the Odin API using the `odin-sdk-go` package.
+Here is the [Example](https://github.com/cybledev/odin-sdk-go/tree/main/examples), you can find various usage examples demonstrating how to interact with the Odin API using the `odin-sdk-go` package.
 
 Each example is a standalone Go program that showcases specific functionalities of the SDK.
 
