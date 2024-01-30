@@ -1,5 +1,7 @@
 package odin
 
+import "time"
+
 type HostCountRequestModel struct {
 	Query string `json:"query"`
 }
@@ -151,76 +153,74 @@ type HostsSearchResponse struct {
 	} `json:"pagination"`
 	Success bool `json:"success"`
 }
+
 type HostsSearchData struct {
-	ASN struct {
-		CountryCode  any    `json:"country_code"`
-		Number       string `json:"number"`
-		Organization string `json:"organization"`
+	Asn struct {
+		CountryCode  *string `json:"country_code"`
+		Number       string  `json:"number"`
+		Organization string  `json:"organization"`
 	} `json:"asn"`
-	ASNUpdatedAt  string `json:"asn_updated_at"`
-	Domains       any    `json:"domains"`
-	Hostnames     []any  `json:"hostnames"`
-	IP            string `json:"ip"`
-	IsIPv4        bool   `json:"is_ipv4"`
-	IsIPv6        bool   `json:"is_ipv6"`
-	LastUpdatedAt string `json:"last_updated_at"`
+	AsnUpdatedAt time.Time `json:"asn_updated_at"`
+	Banner       []any     `json:"banner"`
+	Domains      any       `json:"domains"`
+	Hostnames    []struct {
+		LastUpdatedAt time.Time `json:"last_updated_at"`
+		Name          string    `json:"name"`
+	} `json:"hostnames"`
+	Ip            string    `json:"ip"`
+	IsIpv4        bool      `json:"is_ipv4"`
+	IsIpv6        bool      `json:"is_ipv6"`
+	IsVuln        bool      `json:"is_vuln"`
+	LastUpdatedAt time.Time `json:"last_updated_at"`
 	Location      struct {
-		City        any    `json:"city"`
-		Continent   string `json:"continent"`
+		City        *string `json:"city"`
+		Continent   string  `json:"continent"`
 		Coordinates struct {
 			Latitude  string `json:"latitude"`
 			Longitude string `json:"longitude"`
 		} `json:"coordinates"`
-		CountryCode string `json:"country_code"`
-		CountryName string `json:"country_name"`
-		GeoPoint    string `json:"geo_point"`
-		LocaleCode  string `json:"locale_code"`
-		Network     string `json:"network"`
-		PostalCode  any    `json:"postal_code"`
+		CountryCode string  `json:"country_code"`
+		CountryName string  `json:"country_name"`
+		GeoPoint    string  `json:"geo_point"`
+		LocaleCode  string  `json:"locale_code"`
+		Network     string  `json:"network"`
+		PostalCode  *string `json:"postal_code"`
 	} `json:"location"`
-	LocationUpdatedAt string `json:"location_updated_at"`
-	ScanID            int    `json:"scan_id"`
+	LocationUpdatedAt time.Time `json:"location_updated_at"`
+	ScanId            int       `json:"scan_id"`
 	Services          []struct {
 		Meta struct {
 			Category string `json:"category"`
 			Desc     string `json:"desc"`
 			Name     string `json:"name"`
-			Tags     []any  `json:"tags"`
+			Tags     any    `json:"tags"`
 		} `json:"_meta"`
-		Cve struct {
-			ID       string `json:"id"`
-			Severity string `json:"severity"`
-		} `json:"cve"`
-		ExtraInfo     any    `json:"extra_info"`
-		LastUpdatedAt string `json:"last_updated_at"`
+		Cve           any       `json:"cve"`
+		ExtraInfo     string    `json:"extra_info"`
+		LastUpdatedAt time.Time `json:"last_updated_at"`
 		Modules       struct {
-			Smtp struct {
-				Banner string `json:"banner"`
-			} `json:"smtp"`
-			HTTP struct {
-				ContentLength    int              `json:"content_length"`
-				Headers          map[string][]any `json:"headers"`
-				Protocol         string           `json:"protocol"`
-				StatusCode       int              `json:"status_code"`
-				TransferEncoding any              `json:"transfer_encoding"`
-			} `json:"http"`
-			TLS any `json:"tls"`
+			Zookeeper struct {
+				Clients   []any  `json:"clients"`
+				Mode      string `json:"mode"`
+				NodeCount string `json:"node_count"`
+				Version   string `json:"version"`
+				Zxid      string `json:"zxid"`
+			} `json:"zookeeper,omitempty"`
 		} `json:"modules"`
-		//Modules   interface{}   `json:"modules"`
 		Name      string `json:"name"`
 		Port      int    `json:"port"`
-		Product   any    `json:"product"`
+		Product   string `json:"product"`
 		Protocol  string `json:"protocol"`
 		Softwares []any  `json:"softwares"`
-		Tunnel    any    `json:"tunnel"`
-		Version   any    `json:"version"`
+		Tunnel    string `json:"tunnel"`
+		Version   string `json:"version"`
 	} `json:"services"`
 	ServicesHash string `json:"services_hash"`
 	Tags         []struct {
-		LastUpdatedAt string `json:"last_updated_at"`
-		Name          string `json:"name"`
-		PrettyName    string `json:"pretty_name"`
-		Value         bool   `json:"value"`
+		LastUpdatedAt time.Time `json:"last_updated_at"`
+		Name          string    `json:"name"`
+		PrettyName    string    `json:"pretty_name"`
+		Value         bool      `json:"value"`
 	} `json:"tags"`
 	Whois struct {
 		Encoding struct {
@@ -231,7 +231,7 @@ type HostsSearchData struct {
 		Organization string `json:"organization"`
 		Raw          any    `json:"raw"`
 	} `json:"whois"`
-	WhoisUpdatedAt string `json:"whois_updated_at"`
+	WhoisUpdatedAt time.Time `json:"whois_updated_at"`
 }
 type HostsSummaryRequest struct {
 	Limit int32  `json:"limit"`

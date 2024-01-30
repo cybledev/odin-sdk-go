@@ -3,6 +3,7 @@ package odin
 import (
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"net/http"
@@ -248,6 +249,10 @@ func (c *APIClient) MakeRequest(apiUrl string, method string, query any, respons
 	respBody, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
+	}
+
+	if respBody == nil || len(respBody) == 0 {
+		return nil, errors.New("no response")
 	}
 
 	if err := json.Unmarshal(respBody, responseModel); err != nil {
