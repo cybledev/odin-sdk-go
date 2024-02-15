@@ -82,7 +82,7 @@ type HostsIpDetailsResponse struct {
 						Encryption     string `json:"encryption"`
 						Supervisor     string `json:"supervisor"`
 					} `json:"nsn_service_versions"`
-				} `json:"oracle"`
+				} `json:"oracle,omitempty"`
 				Ssh struct {
 					Banner                    string   `json:"banner"`
 					ClientToServerCiphers     []string `json:"client_to_server_ciphers"`
