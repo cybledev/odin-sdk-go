@@ -123,176 +123,176 @@ type HostsIpDetailsResponse struct {
 					Certificate struct {
 						Extensions struct {
 							AuthorityInfoAccess struct {
-								IssuerUrls []string `json:"issuer_urls"`
-								OcspUrls   []string `json:"ocsp_urls"`
-							} `json:"authority_info_access"`
-							AuthorityKeyId   string `json:"authority_key_id"`
+								IssuerUrls []string `json:"issuer_urls,omitempty"`
+								OcspUrls   []string `json:"ocsp_urls,omitempty"`
+							} `json:"authority_info_access,omitempty"`
+							AuthorityKeyId   string `json:"authority_key_id,omitempty"`
 							BasicConstraints struct {
-								IsCa bool `json:"is_ca"`
-							} `json:"basic_constraints"`
+								IsCa bool `json:"is_ca,omitempty"`
+							} `json:"basic_constraints,omitempty"`
 							CertificatePolicies []struct {
 								Cps []string `json:"cps,omitempty"`
-								Id  string   `json:"id"`
-							} `json:"certificate_policies"`
+								Id  string   `json:"id,omitempty"`
+							} `json:"certificate_policies,omitempty"`
 							ExtendedKeyUsage struct {
-								Any                            bool `json:"any"`
-								AppleCodeSigning               bool `json:"apple_code_signing"`
-								AppleCodeSigningDevelopment    bool `json:"apple_code_signing_development"`
-								AppleCodeSigningThirdParty     bool `json:"apple_code_signing_third_party"`
-								AppleCryptoDevelopmentEnv      bool `json:"apple_crypto_development_env"`
-								AppleCryptoEnv                 bool `json:"apple_crypto_env"`
-								AppleCryptoMaintenanceEnv      bool `json:"apple_crypto_maintenance_env"`
-								AppleCryptoProductionEnv       bool `json:"apple_crypto_production_env"`
-								AppleCryptoQos                 bool `json:"apple_crypto_qos"`
-								AppleCryptoTestEnv             bool `json:"apple_crypto_test_env"`
-								AppleCryptoTier0Qos            bool `json:"apple_crypto_tier0_qos"`
-								AppleCryptoTier1Qos            bool `json:"apple_crypto_tier1_qos"`
-								AppleCryptoTier2Qos            bool `json:"apple_crypto_tier2_qos"`
-								AppleCryptoTier3Qos            bool `json:"apple_crypto_tier3_qos"`
-								AppleIchatEncryption           bool `json:"apple_ichat_encryption"`
-								AppleIchatSigning              bool `json:"apple_ichat_signing"`
-								AppleResourceSigning           bool `json:"apple_resource_signing"`
-								AppleSoftwareUpdateSigning     bool `json:"apple_software_update_signing"`
-								AppleSystemIdentity            bool `json:"apple_system_identity"`
-								ClientAuth                     bool `json:"client_auth"`
-								CodeSigning                    bool `json:"code_signing"`
-								Dvcs                           bool `json:"dvcs"`
-								EapOverLan                     bool `json:"eap_over_lan"`
-								EapOverPpp                     bool `json:"eap_over_ppp"`
-								EmailProtection                bool `json:"email_protection"`
-								IpsecEndSystem                 bool `json:"ipsec_end_system"`
-								IpsecIntermediateSystemUsage   bool `json:"ipsec_intermediate_system_usage"`
-								IpsecTunnel                    bool `json:"ipsec_tunnel"`
-								IpsecUser                      bool `json:"ipsec_user"`
-								MicrosoftCaExchange            bool `json:"microsoft_ca_exchange"`
-								MicrosoftCertTrustListSigning  bool `json:"microsoft_cert_trust_list_signing"`
-								MicrosoftCspSignature          bool `json:"microsoft_csp_signature"`
-								MicrosoftDocumentSigning       bool `json:"microsoft_document_signing"`
-								MicrosoftDrm                   bool `json:"microsoft_drm"`
-								MicrosoftDrmIndividualization  bool `json:"microsoft_drm_individualization"`
-								MicrosoftEfsRecovery           bool `json:"microsoft_efs_recovery"`
-								MicrosoftEmbeddedNtCrypto      bool `json:"microsoft_embedded_nt_crypto"`
-								MicrosoftEncryptedFileSystem   bool `json:"microsoft_encrypted_file_system"`
-								MicrosoftEnrollmentAgent       bool `json:"microsoft_enrollment_agent"`
-								MicrosoftKernelModeCodeSigning bool `json:"microsoft_kernel_mode_code_signing"`
-								MicrosoftKeyRecovery21         bool `json:"microsoft_key_recovery_21"`
-								MicrosoftKeyRecovery3          bool `json:"microsoft_key_recovery_3"`
-								MicrosoftLicenseServer         bool `json:"microsoft_license_server"`
-								MicrosoftLicenses              bool `json:"microsoft_licenses"`
-								MicrosoftLifetimeSigning       bool `json:"microsoft_lifetime_signing"`
-								MicrosoftMobileDeviceSoftware  bool `json:"microsoft_mobile_device_software"`
-								MicrosoftNt5Crypto             bool `json:"microsoft_nt5_crypto"`
-								MicrosoftOemWhqlCrypto         bool `json:"microsoft_oem_whql_crypto"`
-								MicrosoftQualifiedSubordinate  bool `json:"microsoft_qualified_subordinate"`
-								MicrosoftRootListSigner        bool `json:"microsoft_root_list_signer"`
-								MicrosoftServerGatedCrypto     bool `json:"microsoft_server_gated_crypto"`
-								MicrosoftSgcSerialized         bool `json:"microsoft_sgc_serialized"`
-								MicrosoftSmartDisplay          bool `json:"microsoft_smart_display"`
-								MicrosoftSmartcardLogon        bool `json:"microsoft_smartcard_logon"`
-								MicrosoftSystemHealth          bool `json:"microsoft_system_health"`
-								MicrosoftSystemHealthLoophole  bool `json:"microsoft_system_health_loophole"`
-								MicrosoftTimestampSigning      bool `json:"microsoft_timestamp_signing"`
-								MicrosoftWhqlCrypto            bool `json:"microsoft_whql_crypto"`
-								NetscapeServerGatedCrypto      bool `json:"netscape_server_gated_crypto"`
-								OcspSigning                    bool `json:"ocsp_signing"`
-								SbgpCertAaServiceAuth          bool `json:"sbgp_cert_aa_service_auth"`
-								ServerAuth                     bool `json:"server_auth"`
-								TimeStamping                   bool `json:"time_stamping"`
-							} `json:"extended_key_usage"`
+								Any                            bool `json:"any,omitempty"`
+								AppleCodeSigning               bool `json:"apple_code_signing,omitempty"`
+								AppleCodeSigningDevelopment    bool `json:"apple_code_signing_development,omitempty"`
+								AppleCodeSigningThirdParty     bool `json:"apple_code_signing_third_party,omitempty"`
+								AppleCryptoDevelopmentEnv      bool `json:"apple_crypto_development_env,omitempty"`
+								AppleCryptoEnv                 bool `json:"apple_crypto_env,omitempty"`
+								AppleCryptoMaintenanceEnv      bool `json:"apple_crypto_maintenance_env,omitempty"`
+								AppleCryptoProductionEnv       bool `json:"apple_crypto_production_env,omitempty"`
+								AppleCryptoQos                 bool `json:"apple_crypto_qos,omitempty"`
+								AppleCryptoTestEnv             bool `json:"apple_crypto_test_env,omitempty"`
+								AppleCryptoTier0Qos            bool `json:"apple_crypto_tier0_qos,omitempty"`
+								AppleCryptoTier1Qos            bool `json:"apple_crypto_tier1_qos,omitempty"`
+								AppleCryptoTier2Qos            bool `json:"apple_crypto_tier2_qos,omitempty"`
+								AppleCryptoTier3Qos            bool `json:"apple_crypto_tier3_qos,omitempty"`
+								AppleIchatEncryption           bool `json:"apple_ichat_encryption,omitempty"`
+								AppleIchatSigning              bool `json:"apple_ichat_signing,omitempty"`
+								AppleResourceSigning           bool `json:"apple_resource_signing,omitempty"`
+								AppleSoftwareUpdateSigning     bool `json:"apple_software_update_signing,omitempty"`
+								AppleSystemIdentity            bool `json:"apple_system_identity,omitempty"`
+								ClientAuth                     bool `json:"client_auth,omitempty"`
+								CodeSigning                    bool `json:"code_signing,omitempty"`
+								Dvcs                           bool `json:"dvcs,omitempty"`
+								EapOverLan                     bool `json:"eap_over_lan,omitempty"`
+								EapOverPpp                     bool `json:"eap_over_ppp,omitempty"`
+								EmailProtection                bool `json:"email_protection,omitempty"`
+								IpsecEndSystem                 bool `json:"ipsec_end_system,omitempty"`
+								IpsecIntermediateSystemUsage   bool `json:"ipsec_intermediate_system_usage,omitempty"`
+								IpsecTunnel                    bool `json:"ipsec_tunnel,omitempty"`
+								IpsecUser                      bool `json:"ipsec_user,omitempty"`
+								MicrosoftCaExchange            bool `json:"microsoft_ca_exchange,omitempty"`
+								MicrosoftCertTrustListSigning  bool `json:"microsoft_cert_trust_list_signing,omitempty"`
+								MicrosoftCspSignature          bool `json:"microsoft_csp_signature,omitempty"`
+								MicrosoftDocumentSigning       bool `json:"microsoft_document_signing,omitempty"`
+								MicrosoftDrm                   bool `json:"microsoft_drm,omitempty"`
+								MicrosoftDrmIndividualization  bool `json:"microsoft_drm_individualization,omitempty"`
+								MicrosoftEfsRecovery           bool `json:"microsoft_efs_recovery,omitempty"`
+								MicrosoftEmbeddedNtCrypto      bool `json:"microsoft_embedded_nt_crypto,omitempty"`
+								MicrosoftEncryptedFileSystem   bool `json:"microsoft_encrypted_file_system,omitempty"`
+								MicrosoftEnrollmentAgent       bool `json:"microsoft_enrollment_agent,omitempty"`
+								MicrosoftKernelModeCodeSigning bool `json:"microsoft_kernel_mode_code_signing,omitempty"`
+								MicrosoftKeyRecovery21         bool `json:"microsoft_key_recovery_21,omitempty"`
+								MicrosoftKeyRecovery3          bool `json:"microsoft_key_recovery_3,omitempty"`
+								MicrosoftLicenseServer         bool `json:"microsoft_license_server,omitempty"`
+								MicrosoftLicenses              bool `json:"microsoft_licenses,omitempty"`
+								MicrosoftLifetimeSigning       bool `json:"microsoft_lifetime_signing,omitempty"`
+								MicrosoftMobileDeviceSoftware  bool `json:"microsoft_mobile_device_software,omitempty"`
+								MicrosoftNt5Crypto             bool `json:"microsoft_nt5_crypto,omitempty"`
+								MicrosoftOemWhqlCrypto         bool `json:"microsoft_oem_whql_crypto,omitempty"`
+								MicrosoftQualifiedSubordinate  bool `json:"microsoft_qualified_subordinate,omitempty"`
+								MicrosoftRootListSigner        bool `json:"microsoft_root_list_signer,omitempty"`
+								MicrosoftServerGatedCrypto     bool `json:"microsoft_server_gated_crypto,omitempty"`
+								MicrosoftSgcSerialized         bool `json:"microsoft_sgc_serialized,omitempty"`
+								MicrosoftSmartDisplay          bool `json:"microsoft_smart_display,omitempty"`
+								MicrosoftSmartcardLogon        bool `json:"microsoft_smartcard_logon,omitempty"`
+								MicrosoftSystemHealth          bool `json:"microsoft_system_health,omitempty"`
+								MicrosoftSystemHealthLoophole  bool `json:"microsoft_system_health_loophole,omitempty"`
+								MicrosoftTimestampSigning      bool `json:"microsoft_timestamp_signing,omitempty"`
+								MicrosoftWhqlCrypto            bool `json:"microsoft_whql_crypto,omitempty"`
+								NetscapeServerGatedCrypto      bool `json:"netscape_server_gated_crypto,omitempty"`
+								OcspSigning                    bool `json:"ocsp_signing,omitempty"`
+								SbgpCertAaServiceAuth          bool `json:"sbgp_cert_aa_service_auth,omitempty"`
+								ServerAuth                     bool `json:"server_auth,omitempty"`
+								TimeStamping                   bool `json:"time_stamping,omitempty"`
+							} `json:"extended_key_usage,omitempty"`
 							KeyUsage struct {
-								CertificateSign   bool `json:"certificate_sign"`
-								ContentCommitment bool `json:"content_commitment"`
-								CrlSign           bool `json:"crl_sign"`
-								DataEncipherment  bool `json:"data_encipherment"`
-								DecipherOnly      bool `json:"decipher_only"`
-								DigitalSignature  bool `json:"digital_signature"`
-								EncipherOnly      bool `json:"encipher_only"`
-								KeyAgreement      bool `json:"key_agreement"`
-								KeyEncipherment   bool `json:"key_encipherment"`
-							} `json:"key_usage"`
+								CertificateSign   bool `json:"certificate_sign,omitempty"`
+								ContentCommitment bool `json:"content_commitment,omitempty"`
+								CrlSign           bool `json:"crl_sign,omitempty"`
+								DataEncipherment  bool `json:"data_encipherment,omitempty"`
+								DecipherOnly      bool `json:"decipher_only,omitempty"`
+								DigitalSignature  bool `json:"digital_signature,omitempty"`
+								EncipherOnly      bool `json:"encipher_only,omitempty"`
+								KeyAgreement      bool `json:"key_agreement,omitempty"`
+								KeyEncipherment   bool `json:"key_encipherment,omitempty"`
+							} `json:"key_usage,omitempty"`
 							SubjectAltName struct {
-								DnsNames []string `json:"dns_names"`
-							} `json:"subject_alt_name"`
-							SubjectKeyId string `json:"subject_key_id"`
-						} `json:"extensions"`
-						FingerprintMd5    string `json:"fingerprint_md5"`
-						FingerprintSha1   string `json:"fingerprint_sha1"`
-						FingerprintSha256 string `json:"fingerprint_sha256"`
+								DnsNames []string `json:"dns_names,omitempty"`
+							} `json:"subject_alt_name,omitempty"`
+							SubjectKeyId string `json:"subject_key_id,omitempty"`
+						} `json:"extensions,omitempty"`
+						FingerprintMd5    string `json:"fingerprint_md5,omitempty"`
+						FingerprintSha1   string `json:"fingerprint_sha1,omitempty"`
+						FingerprintSha256 string `json:"fingerprint_sha256,omitempty"`
 						Issuer            struct {
-							CommonName   []string `json:"common_name"`
-							Country      []string `json:"country"`
-							Locality     []string `json:"locality"`
-							Organization []string `json:"organization"`
-							Province     []string `json:"province"`
-						} `json:"issuer"`
-						Jarm       string `json:"jarm"`
-						Redacted   bool   `json:"redacted"`
+							CommonName   []string `json:"common_name,omitempty"`
+							Country      []string `json:"country,omitempty"`
+							Locality     []string `json:"locality,omitempty"`
+							Organization []string `json:"organization,omitempty"`
+							Province     []string `json:"province,omitempty"`
+						} `json:"issuer,omitempty"`
+						Jarm       string `json:"jarm,omitempty"`
+						Redacted   bool   `json:"redacted,omitempty"`
 						Revocation struct {
 							Ocsp struct {
-								Reason  string `json:"reason"`
-								Revoked bool   `json:"revoked"`
-							} `json:"ocsp"`
-						} `json:"revocation"`
-						SerialNumber string `json:"serial_number"`
+								Reason  string `json:"reason,omitempty"`
+								Revoked bool   `json:"revoked,omitempty"`
+							} `json:"ocsp,omitempty"`
+						} `json:"revocation,omitempty"`
+						SerialNumber string `json:"serial_number,omitempty"`
 						Signature    struct {
 							Algorithm struct {
-								Name string `json:"name"`
-								Oid  string `json:"oid"`
-							} `json:"algorithm"`
-							SelfSigned bool `json:"self_signed"`
-						} `json:"signature"`
+								Name string `json:"name,omitempty"`
+								Oid  string `json:"oid,omitempty"`
+							} `json:"algorithm,omitempty"`
+							SelfSigned bool `json:"self_signed,omitempty"`
+						} `json:"signature,omitempty"`
 						SignedCertificateTimestamps []struct {
-							EntryType string `json:"entry_type"`
-							LogId     string `json:"log_id"`
+							EntryType string `json:"entry_type,omitempty"`
+							LogId     string `json:"log_id,omitempty"`
 							Signature struct {
-								Algorithm     string `json:"algorithm"`
-								HashAlgorithm string `json:"hash_algorithm"`
-								Value         string `json:"value"`
-							} `json:"signature"`
-							Timestamp string `json:"timestamp"`
-							Version   string `json:"version"`
-						} `json:"signed_certificate_timestamps"`
-						SignedCertificateTimestampsOid string `json:"signed_certificate_timestamps_oid"`
+								Algorithm     string `json:"algorithm,omitempty"`
+								HashAlgorithm string `json:"hash_algorithm,omitempty"`
+								Value         string `json:"value,omitempty"`
+							} `json:"signature,omitempty"`
+							Timestamp string `json:"timestamp,omitempty"`
+							Version   string `json:"version,omitempty"`
+						} `json:"signed_certificate_timestamps,omitempty"`
+						SignedCertificateTimestampsOid string `json:"signed_certificate_timestamps_oid,omitempty"`
 						Subject                        struct {
-							CommonName []string `json:"common_name"`
-						} `json:"subject"`
+							CommonName []string `json:"common_name,omitempty"`
+						} `json:"subject,omitempty"`
 						SubjectAltName struct {
-							DnsNames         []string `json:"dns_names"`
+							DnsNames         []string `json:"dns_names,omitempty"`
 							ExtendedDnsNames []struct {
-								Domain    string `json:"domain"`
-								Fld       string `json:"fld"`
-								Subdomain string `json:"subdomain"`
-								Tld       string `json:"tld"`
-							} `json:"extended_dns_names"`
-						} `json:"subject_alt_name"`
+								Domain    string `json:"domain,omitempty"`
+								Fld       string `json:"fld,omitempty"`
+								Subdomain string `json:"subdomain,omitempty"`
+								Tld       string `json:"tld,omitempty"`
+							} `json:"extended_dns_names,omitempty"`
+						} `json:"subject_alt_name,omitempty"`
 						SubjectKeyInfo struct {
-							Key string `json:"_key"`
+							Key string `json:"_key,omitempty"`
 							Dh  struct {
-							} `json:"dh"`
+							} `json:"dh,omitempty"`
 							Dsa struct {
-							} `json:"dsa"`
+							} `json:"dsa,omitempty"`
 							Ecdsa struct {
-							} `json:"ecdsa"`
-							FingerprintSha256 string `json:"fingerprint_sha256"`
-							KeyAlgorithm      string `json:"key_algorithm"`
+							} `json:"ecdsa,omitempty"`
+							FingerprintSha256 string `json:"fingerprint_sha256,omitempty"`
+							KeyAlgorithm      string `json:"key_algorithm,omitempty"`
 							Rsa               struct {
-								Exponent int `json:"exponent"`
-								Length   int `json:"length"`
-							} `json:"rsa"`
-						} `json:"subject_key_info"`
-						TbsFingerprint     string `json:"tbs_fingerprint"`
-						TbsNoctFingerprint string `json:"tbs_noct_fingerprint"`
-						ValidationLevel    string `json:"validation_level"`
+								Exponent int `json:"exponent,omitempty"`
+								Length   int `json:"length,omitempty"`
+							} `json:"rsa,omitempty"`
+						} `json:"subject_key_info,omitempty"`
+						TbsFingerprint     string `json:"tbs_fingerprint,omitempty"`
+						TbsNoctFingerprint string `json:"tbs_noct_fingerprint,omitempty"`
+						ValidationLevel    string `json:"validation_level,omitempty"`
 						Validity           struct {
-							LengthSeconds int    `json:"length_seconds"`
-							NotAfter      string `json:"not_after"`
-							NotBefore     string `json:"not_before"`
-						} `json:"validity"`
-						Version int `json:"version"`
-					} `json:"certificate"`
-					FingerprintSha256 string   `json:"fingerprint_sha256"`
-					Precert           bool     `json:"precert"`
-					Tags              []string `json:"tags"`
+							LengthSeconds int    `json:"length_seconds,omitempty"`
+							NotAfter      string `json:"not_after,omitempty"`
+							NotBefore     string `json:"not_before,omitempty"`
+						} `json:"validity,omitempty"`
+						Version int `json:"version,omitempty"`
+					} `json:"certificate,omitempty"`
+					FingerprintSha256 string   `json:"fingerprint_sha256,omitempty"`
+					Precert           bool     `json:"precert,omitempty"`
+					Tags              []string `json:"tags,omitempty"`
 				} `json:"tls,omitempty"`
 			} `json:"modules,omitempty"`
 			Name      string `json:"name"`
