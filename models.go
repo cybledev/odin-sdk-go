@@ -66,22 +66,22 @@ type HostsIpDetailsResponse struct {
 			LastUpdatedAt time.Time `json:"last_updated_at"`
 			Modules       struct {
 				Oracle struct {
-					AcceptVersion        int64           `json:"accept_version"`
-					ConnectFlags0        map[string]bool `json:"connect_flags0"`
-					ConnectFlags1        map[string]bool `json:"connect_flags1"`
-					DidResend            bool            `json:"did_resend"`
+					AcceptVersion        int64           `json:"accept_version,omitempty"`
+					ConnectFlags0        map[string]bool `json:"connect_flags0,omitempty"`
+					ConnectFlags1        map[string]bool `json:"connect_flags1,omitempty"`
+					DidResend            bool            `json:"did_resend,omitempty"`
 					GlobalServiceOptions struct {
-						FullDuplex     bool `json:"FULL_DUPLEX"`
-						HeaderChecksum bool `json:"HEADER_CHECKSUM"`
-						Unknown0001    bool `json:"UNKNOWN_0001"`
-						Unknown0040    bool `json:"UNKNOWN_0040"`
-					} `json:"global_service_options"`
+						FullDuplex     bool `json:"FULL_DUPLEX,omitempty"`
+						HeaderChecksum bool `json:"HEADER_CHECKSUM,omitempty"`
+						Unknown0001    bool `json:"UNKNOWN_0001,omitempty"`
+						Unknown0040    bool `json:"UNKNOWN_0040,omitempty"`
+					} `json:"global_service_options,omitempty"`
 					NSNServiceVersions struct {
-						Authentication string `json:"authentication"`
-						DataIntegrity  string `json:"data_integrity"`
-						Encryption     string `json:"encryption"`
-						Supervisor     string `json:"supervisor"`
-					} `json:"nsn_service_versions"`
+						Authentication string `json:"authentication,omitempty"`
+						DataIntegrity  string `json:"data_integrity,omitempty"`
+						Encryption     string `json:"encryption,omitempty"`
+						Supervisor     string `json:"supervisor,omitempty"`
+					} `json:"nsn_service_versions,omitempty"`
 				} `json:"oracle,omitempty"`
 				Ssh struct {
 					Banner                    string   `json:"banner"`
@@ -333,6 +333,14 @@ type HostsIpDetailsResponse struct {
 }
 
 type IpCveDetails struct {
+	Exploit []struct {
+		Description string `json:"description"`
+		File        string `json:"file"`
+		Id          string `json:"id"`
+		Platform    string `json:"platform"`
+		Type        string `json:"type"`
+		Url         string `json:"url"`
+	} `json:"exploit"`
 	ID           string   `json:"id"`
 	References   []string `json:"references"`
 	Score        float64  `json:"score"`
