@@ -84,40 +84,40 @@ type HostsIpDetailsResponse struct {
 					} `json:"nsn_service_versions,omitempty"`
 				} `json:"oracle,omitempty"`
 				Ssh struct {
-					Banner                    string   `json:"banner"`
-					ClientToServerCiphers     []string `json:"client_to_server_ciphers"`
-					ClientToServerCompression []string `json:"client_to_server_compression"`
-					ClientToServerMacs        []string `json:"client_to_server_macs"`
-					HostKeyAlgorithms         []string `json:"host_key_algorithms"`
-					KexAlgorithms             []string `json:"kex_algorithms"`
+					Banner                    string   `json:"banner,omitempty"`
+					ClientToServerCiphers     []string `json:"client_to_server_ciphers,omitempty"`
+					ClientToServerCompression []string `json:"client_to_server_compression,omitempty"`
+					ClientToServerMacs        []string `json:"client_to_server_macs,omitempty"`
+					HostKeyAlgorithms         []string `json:"host_key_algorithms,omitempty"`
+					KexAlgorithms             []string `json:"kex_algorithms,omitempty"`
 					Key                       struct {
-						Algorithm         string `json:"algorithm"`
-						FingerprintSha256 string `json:"fingerprint_sha256"`
-					} `json:"key"`
-					ServerToClientCiphers     []string `json:"server_to_client_ciphers"`
-					ServerToClientCompression []string `json:"server_to_client_compression"`
-					ServerToClientMacs        []string `json:"server_to_client_macs"`
-					Software                  string   `json:"software"`
-					Version                   string   `json:"version"`
+						Algorithm         string `json:"algorithm,omitempty"`
+						FingerprintSha256 string `json:"fingerprint_sha256,omitempty"`
+					} `json:"key,omitempty"`
+					ServerToClientCiphers     []string `json:"server_to_client_ciphers,omitempty"`
+					ServerToClientCompression []string `json:"server_to_client_compression,omitempty"`
+					ServerToClientMacs        []string `json:"server_to_client_macs,omitempty"`
+					Software                  string   `json:"software,omitempty"`
+					Version                   string   `json:"version,omitempty"`
 				} `json:"ssh,omitempty"`
 				Http struct {
 					Body struct {
-						MurmurHash int    `json:"murmur_hash"`
-						Sha256Hash string `json:"sha256_hash"`
-					} `json:"body"`
-					Component     []string `json:"component"`
-					ContentLength int      `json:"content_length"`
+						MurmurHash int    `json:"murmur_hash,omitempty"`
+						Sha256Hash string `json:"sha256_hash,omitempty"`
+					} `json:"body,omitempty"`
+					Component     []string `json:"component,omitempty"`
+					ContentLength int      `json:"content_length,omitempty"`
 					Favicon       struct {
-					} `json:"favicon"`
+					} `json:"favicon,omitempty"`
 					Headers struct {
-						ContentType []string `json:"content_type"`
-						Date        []string `json:"date"`
-						Server      []string `json:"server"`
-						XPoweredBy  []string `json:"x_powered_by"`
-					} `json:"headers"`
-					Protocol         string   `json:"protocol"`
-					StatusCode       int      `json:"status_code"`
-					TransferEncoding []string `json:"transfer_encoding"`
+						ContentType []string `json:"content_type,omitempty"`
+						Date        []string `json:"date,omitempty"`
+						Server      []string `json:"server,omitempty"`
+						XPoweredBy  []string `json:"x_powered_by,omitempty"`
+					} `json:"headers,omitempty"`
+					Protocol         string   `json:"protocol,omitempty"`
+					StatusCode       int      `json:"status_code,omitempty"`
+					TransferEncoding []string `json:"transfer_encoding,omitempty"`
 				} `json:"http,omitempty"`
 				Tls struct {
 					Certificate struct {
@@ -294,7 +294,7 @@ type HostsIpDetailsResponse struct {
 					Precert           bool     `json:"precert"`
 					Tags              []string `json:"tags"`
 				} `json:"tls,omitempty"`
-			} `json:"modules"`
+			} `json:"modules,omitempty"`
 			Name      string `json:"name"`
 			Port      int    `json:"port"`
 			Product   string `json:"product"`
